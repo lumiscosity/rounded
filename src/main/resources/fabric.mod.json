@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "rounded",
+	"version": "${version}",
+	"name": "Rounded",
+	"description": "Vanilla+ features that round out the game",
+	"authors": [
+		"lumiscosity"
+	],
+	"contact": {
+		"homepage": "https://lumiscosity.neocities.org/",
+		"sources": "https://github.com/lumiscosity/rounded"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/rounded/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.lumiscosity.rounded.Rounded"
+		],
+		"client": [
+			"com.lumiscosity.rounded.RoundedClient"
+		]
+	},
+	"mixins": [
+		"rounded.mixins.json",
+		{
+			"config": "rounded.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
