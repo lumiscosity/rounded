@@ -6,7 +6,6 @@ import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.passive.AnimalEntity;
-import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.predicate.entity.EntityPredicates;
@@ -85,7 +84,8 @@ public class TroughBlock extends ComposterBlock {
         }
     }
 
-    public <T extends Entity> void growAnimals(ServerWorld world, BlockPos pos) {
+    public <T extends Entity> boolean growAnimals(ServerWorld world, BlockPos pos) {
+        boolean i = false;
         for (AnimalEntity entity : world.getEntitiesByType(
                 TypeFilter.instanceOf(AnimalEntity.class),
                 new Box(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 1, pos.getZ() + 1)
@@ -94,9 +94,14 @@ public class TroughBlock extends ComposterBlock {
         ) {
             if (entity.getBreedingAge() < 0) {
                 entity.setBreedingAge(entity.getBreedingAge() + 600);
+                i = true;
             }
-            entity.heal(3F);
+            if (entity.getMaxHealth() != entity.getHealth()) {
+                entity.heal(3F);
+                i = true;
+            }
         }
+        return i;
     }
 
     public static BlockState consumeTroughStack(BlockState state) {
@@ -111,8 +116,9 @@ public class TroughBlock extends ComposterBlock {
     @Override
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(LEVEL) > 0) {
-            growAnimals(world, pos);
-            consumeTroughStack(state);
+            if (growAnimals(world, pos)) {
+                world.setBlockState(pos, consumeTroughStack(state));
+            }
         }
     }
 }

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "rounded:lustershroom_block",
+    "rounded:treated_oak_planks",
+    "rounded:treated_spruce_planks",
+    "rounded:treated_jungle_planks",
+    "rounded:treated_dark_oak_planks",
+    "rounded:treated_acacia_planks",
+    "rounded:treated_birch_planks",
+    "rounded:treated_cherry_planks",
+    "rounded:treated_mangrove_planks",
+    "rounded:treated_bamboo_planks"
+  ]
+}

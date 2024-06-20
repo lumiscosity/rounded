@@ -1,6 +1,8 @@
 package com.lumiscosity.rounded.blocks;
 
 import com.lumiscosity.rounded.worldgen.HugeLustershroomFeature;
+import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntityType;
@@ -13,9 +15,13 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.*;
+
+import java.util.List;
 
 import static com.lumiscosity.rounded.Rounded.MOD_ID;
 
@@ -89,6 +95,7 @@ public class RegisterBlocks {
     public static final Feature<HugeMushroomFeatureConfig> HUGE_LUSTERSHROOM = register_feature(
             "huge_lustershroom", new HugeLustershroomFeature(HugeMushroomFeatureConfig.CODEC)
     );
+
     public static final Block LUSTERSHROOM_PLANT = new LustershroomPlant(
             RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(MOD_ID, "huge_lustershroom")),
             AbstractBlock.Settings.create()
@@ -134,6 +141,17 @@ public class RegisterBlocks {
         register_block("luster_cluster", LUSTER_CLUSTER, LUSTER_CLUSTER_ITEM);
 
         register_block("trough", TROUGH, TROUGH_ITEM);
+
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_lustershrooms"))),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "lustershroom"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_more_lustershrooms"))),
+                GenerationStep.Feature.VEGETAL_DECORATION,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "lustershroom_extra"))
+        );
     }
 
     private static void register_treated_plank(String name, Block block, Item item) {
