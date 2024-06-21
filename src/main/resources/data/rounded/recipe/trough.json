@@ -3,17 +3,14 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "#minecraft:planks"
-    },
-    "X": {
-      "item": "minecraft:air"
+      "tag": "minecraft:planks"
     },
     "O": {
       "item": "minecraft:smooth_stone"
     }
   },
   "pattern": [
-    "#X#",
+    "# #",
     "OOO"
   ],
   "result": {

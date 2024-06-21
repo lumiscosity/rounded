@@ -110,7 +110,7 @@ public class RegisterBlocks {
                     .ticksRandomly()
                     .breakInstantly()
                     .sounds(BlockSoundGroup.GRASS)
-                    .luminance(state -> 8)
+                    .luminance(state -> 3)
                     .postProcess(Blocks::always)
                     .pistonBehavior(PistonBehavior.DESTROY)
     );
@@ -118,11 +118,11 @@ public class RegisterBlocks {
     public static final Block LUSTERSHROOM_BLOCK = new MushroomBlock(
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.CYAN)
-                    .luminance(state -> 8)
+                    .luminance(state -> 7)
     );
     public static final BlockItem LUSTERSHROON_BLOCK_ITEM= new BlockItem(LUSTERSHROOM_BLOCK, new Item.Settings());
     public static final Block LUSTER_CLUSTER = new Block(
-            AbstractBlock.Settings.create().luminance(state -> 8).mapColor(MapColor.CYAN).instrument(NoteBlockInstrument.CHIME).strength(1.5F).sounds(BlockSoundGroup.DRIPSTONE_BLOCK)
+            AbstractBlock.Settings.create().luminance(state -> 7).mapColor(MapColor.CYAN).instrument(NoteBlockInstrument.CHIME).strength(1.5F).sounds(BlockSoundGroup.DRIPSTONE_BLOCK)
     );
     public static final BlockItem LUSTER_CLUSTER_ITEM = new BlockItem(LUSTER_CLUSTER, new Item.Settings());
 

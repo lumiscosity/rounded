@@ -16,6 +16,7 @@ public class HugeLustershroomFeature extends HugeMushroomFeature {
 
     @Override
     protected void generateCap(WorldAccess world, Random random, BlockPos start, int y, BlockPos.Mutable mutable, HugeMushroomFeatureConfig config) {
+        boolean e = false;
         for (int i = y - 3; i <= y; i++) {
             int j = i < y ? config.foliageRadius : config.foliageRadius - 1;
             int k = config.foliageRadius - 2;
@@ -39,6 +40,7 @@ public class HugeLustershroomFeature extends HugeMushroomFeature {
                     }
                 }
                 j += 1;
+                e = true;
             }
 
             for (int l = -j; l <= j; l++) {
@@ -58,7 +60,7 @@ public class HugeLustershroomFeature extends HugeMushroomFeature {
                                     && blockState.contains(MushroomBlock.NORTH)
                                     && blockState.contains(MushroomBlock.SOUTH)
                                     && blockState.contains(MushroomBlock.UP)) {
-                                blockState = blockState.with(MushroomBlock.UP, i >= y - 1)
+                                blockState = blockState.with(MushroomBlock.UP, i >= y - 1 || e)
                                         .with(MushroomBlock.WEST, l < -k)
                                         .with(MushroomBlock.EAST, l > k)
                                         .with(MushroomBlock.NORTH, m < -k)
