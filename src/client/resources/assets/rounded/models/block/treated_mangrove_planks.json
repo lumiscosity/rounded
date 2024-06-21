@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rounded:block/treated_mangrove_planks"
+  }
+}

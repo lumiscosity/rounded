@@ -1,9 +1,8 @@
 {
 	"required": true,
-	"package": "com.lumiscosity.rounded.mixin.client",
+	"package": "com.lumiscosity.rounded.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ExampleClientMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
