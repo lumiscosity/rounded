@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "rounded:treated_planks",
+  "key": {
+    "#": {
+      "item": "minecraft:jungle_planks"
+    },
+    "X": {
+      "item": "minecraft:lapis_block"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rounded:treated_jungle_planks"
+  }
+}

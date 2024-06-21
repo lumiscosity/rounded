@@ -1,0 +1,23 @@
+{
+  "block.rounded.treated_oak_planks": "Impregnowane dębowe deski",
+  "block.rounded.treated_spruce_planks": "Impregnowane świerkowe deski",
+  "block.rounded.treated_birch_planks": "Impregnowane brzozowe deski",
+  "block.rounded.treated_jungle_planks": "Impregnowane tropikalne deski",
+  "block.rounded.treated_acacia_planks": "Impregnowane akacjowe deski",
+  "block.rounded.treated_cherry_planks": "Impregnowane wiśniowe deski",
+  "block.rounded.treated_dark_oak_planks": "Impregnowane ciemnodębowe deski",
+  "block.rounded.treated_mangrove_planks": "Impregnowane namorzynowe deski",
+  "block.rounded.treated_bamboo_planks": "Impregnowane bambusowe deski",
+  "block.rounded.treated_crimson_planks": "Impregnowane szkarłatne deski",
+  "block.rounded.treated_warped_planks": "Impregnowane spaczone deski",
+  "block.rounded.lustershroom": "Lśniącogrzyb",
+  "block.rounded.lustershroom_block": "Blok lśniącogrzybu",
+  "block.rounded.luster_cluster": "Skupiony lśniącogrzyb",
+  "block.rounded.trough": "Koryto",
+
+  "tag.worldgen.biome.rounded.has_lustershrooms": "Ma lśniącogrzyby",
+  "tag.worldgen.biome.rounded.has_more_lustershrooms": "Ma więcej lśniącogrzybów",
+  "tag.item.rounded.trough_feed": "Pokarm w korycie",
+  "tag.item.rounded.treated_planks": "Impregnowane deski",
+  "tag.item.c.grain": "Zboże"
+}

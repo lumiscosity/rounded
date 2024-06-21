@@ -76,6 +76,13 @@ public class RegisterBlocks {
                             .sounds(BlockSoundGroup.BAMBOO_WOOD)
                             .burnable()
             );
+    public static final Block TREATED_CRIMSON_PLANKS = new Block(
+                    AbstractBlock.Settings.create().mapColor(MapColor.DULL_PINK).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
+            );
+    public static final Block TREATED_WARPED_PLANKS = new Block(
+                    AbstractBlock.Settings.create().mapColor(MapColor.DARK_AQUA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
+            );
+
     public static final Item TREATED_OAK_PLANKS_ITEM = new BlockItem(TREATED_OAK_PLANKS, new Item.Settings());
     public static final Item TREATED_SPRUCE_PLANKS_ITEM = new BlockItem(TREATED_SPRUCE_PLANKS, new Item.Settings());
     public static final Item TREATED_BIRCH_PLANKS_ITEM = new BlockItem(TREATED_BIRCH_PLANKS, new Item.Settings());
@@ -85,6 +92,8 @@ public class RegisterBlocks {
     public static final Item TREATED_DARK_OAK_PLANKS_ITEM = new BlockItem(TREATED_DARK_OAK_PLANKS, new Item.Settings());
     public static final Item TREATED_MANGROVE_PLANKS_ITEM = new BlockItem(TREATED_OAK_PLANKS, new Item.Settings());
     public static final Item TREATED_BAMBOO_PLANKS_ITEM = new BlockItem(TREATED_BAMBOO_PLANKS, new Item.Settings());
+    public static final Item TREATED_CRIMSON_PLANKS_ITEM = new BlockItem(TREATED_CRIMSON_PLANKS, new Item.Settings());
+    public static final Item TREATED_WARPED_PLANKS_ITEM = new BlockItem(TREATED_WARPED_PLANKS, new Item.Settings());
 
 
 
@@ -132,6 +141,8 @@ public class RegisterBlocks {
         register_treated_plank("treated_dark_oak_planks", TREATED_DARK_OAK_PLANKS, TREATED_DARK_OAK_PLANKS_ITEM);
         register_treated_plank("treated_mangrove_planks", TREATED_MANGROVE_PLANKS, TREATED_MANGROVE_PLANKS_ITEM);
         register_treated_plank("treated_bamboo_planks", TREATED_BAMBOO_PLANKS, TREATED_BAMBOO_PLANKS_ITEM);
+        register_treated_plank("treated_crimson_planks", TREATED_CRIMSON_PLANKS, TREATED_CRIMSON_PLANKS_ITEM);
+        register_treated_plank("treated_warped_planks", TREATED_WARPED_PLANKS, TREATED_WARPED_PLANKS_ITEM);
 
         register_block("lustershroom", LUSTERSHROOM_PLANT, LUSTERSHROON_PLANT_ITEM);
         register_block("lustershroom_block", LUSTERSHROOM_BLOCK, LUSTERSHROON_BLOCK_ITEM);
@@ -153,7 +164,7 @@ public class RegisterBlocks {
 
     private static void register_treated_plank(String name, Block block, Item item) {
         register_block(name, block, item);
-        LandPathNodeTypesRegistry.register(block, PathNodeType.BLOCKED, PathNodeType.BLOCKED);
+        LandPathNodeTypesRegistry.register(block, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
     }
 
     private static void register_block(String name, Block block, Item item) {

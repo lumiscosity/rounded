@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "minecraft:block/cartography_table_side3"
+    "all": "rounded:block/treated_warped_planks"
   }
 }
