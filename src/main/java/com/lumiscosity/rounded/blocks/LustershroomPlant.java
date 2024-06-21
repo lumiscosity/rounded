@@ -15,8 +15,6 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 
-import static com.lumiscosity.rounded.Rounded.MOD_ID;
-
 public class LustershroomPlant extends MushroomPlantBlock {
     public LustershroomPlant(RegistryKey<ConfiguredFeature<?, ?>> featureKey, Settings settings) {
         super(featureKey, settings);
