@@ -162,7 +162,7 @@ public class RegisterBlocks {
         );
     }
 
-    private static void register_treated_plank(String name, Block block, Item item) {
+    public static void register_treated_plank(String name, Block block, Item item) {
         register_block(name, block, item);
         LandPathNodeTypesRegistry.register(block, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
     }

@@ -17,7 +17,10 @@
 
   "tag.worldgen.biome.rounded.has_lustershrooms": "Has Lustershrooms",
   "tag.worldgen.biome.rounded.has_more_lustershrooms": "Has more Lustershrooms",
+  "tag.block.rounded.treated_planks": "Treated Planks",
   "tag.item.rounded.trough_feed": "Trough Feed",
   "tag.item.rounded.treated_planks": "Treated Planks",
-  "tag.item.c.grain": "Grain"
+  "tag.item.c.grain": "Grain",
+
+  "block.rounded.compat.treated_hevea_brasiliensis_planks": "Treated Hevea Brasiliensis Planks"
 }

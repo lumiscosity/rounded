@@ -9,7 +9,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.SidedInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.predicate.entity.EntityPredicates;
 import net.minecraft.registry.RegistryKeys;
@@ -20,7 +19,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
-import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
 import net.minecraft.util.function.BooleanBiFunction;
 import net.minecraft.util.hit.BlockHitResult;
@@ -130,17 +128,6 @@ public class TroughBlock extends Block implements InventoryProvider {
             return ItemActionResult.success(world.isClient);
         } else {
             return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
-        }
-    }
-
-    public static BlockState fillTrough(Entity user, BlockState state, ServerWorld world, ItemStack stack, BlockPos pos) {
-        int i = state.get(LEVEL);
-        if (i < 7 && stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")))) {
-            BlockState blockState = addToTrough(user, state, world, pos, stack);
-            stack.decrement(1);
-            return blockState;
-        } else {
-            return state;
         }
     }
 
