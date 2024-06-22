@@ -3,7 +3,7 @@
     "textures": {
         "particle": "rounded:block/trough_side",
         "top": "rounded:block/trough_top",
-        "bottom": "minecraft:block/smooth_stone",
+        "bottom": "minecraft:block/stonecutter_bottom",
         "side": "rounded:block/trough_side",
         "inside": "rounded:block/trough_inside"
     },

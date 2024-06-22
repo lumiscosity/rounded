@@ -3,6 +3,7 @@ package com.lumiscosity.rounded.blocks;
 import com.lumiscosity.rounded.worldgen.HugeLustershroomFeature;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -10,6 +11,8 @@ import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -133,23 +136,35 @@ public class RegisterBlocks {
     public static final Item TROUGH_ITEM = new BlockItem(TROUGH, new Item.Settings());
 
     public static void initBlocks() {
-        register_treated_plank("treated_oak_planks", TREATED_OAK_PLANKS, TREATED_OAK_PLANKS_ITEM);
-        register_treated_plank("treated_spruce_planks", TREATED_SPRUCE_PLANKS, TREATED_SPRUCE_PLANKS_ITEM);
-        register_treated_plank("treated_birch_planks", TREATED_BIRCH_PLANKS, TREATED_BIRCH_PLANKS_ITEM);
-        register_treated_plank("treated_jungle_planks", TREATED_JUNGLE_PLANKS, TREATED_JUNGLE_PLANKS_ITEM);
-        register_treated_plank("treated_acacia_planks", TREATED_ACACIA_PLANKS, TREATED_ACACIA_PLANKS_ITEM);
-        register_treated_plank("treated_cherry_planks", TREATED_CHERRY_PLANKS, TREATED_CHERRY_PLANKS_ITEM);
-        register_treated_plank("treated_dark_oak_planks", TREATED_DARK_OAK_PLANKS, TREATED_DARK_OAK_PLANKS_ITEM);
-        register_treated_plank("treated_mangrove_planks", TREATED_MANGROVE_PLANKS, TREATED_MANGROVE_PLANKS_ITEM);
-        register_treated_plank("treated_bamboo_planks", TREATED_BAMBOO_PLANKS, TREATED_BAMBOO_PLANKS_ITEM);
-        register_treated_plank("treated_crimson_planks", TREATED_CRIMSON_PLANKS, TREATED_CRIMSON_PLANKS_ITEM);
-        register_treated_plank("treated_warped_planks", TREATED_WARPED_PLANKS, TREATED_WARPED_PLANKS_ITEM);
+        register_treated_plank("treated_oak_planks", TREATED_OAK_PLANKS, TREATED_OAK_PLANKS_ITEM, "minecraft", "oak");
+        register_treated_plank("treated_spruce_planks", TREATED_SPRUCE_PLANKS, TREATED_SPRUCE_PLANKS_ITEM, "minecraft", "spruce");
+        register_treated_plank("treated_birch_planks", TREATED_BIRCH_PLANKS, TREATED_BIRCH_PLANKS_ITEM, "minecraft", "birch");
+        register_treated_plank("treated_jungle_planks", TREATED_JUNGLE_PLANKS, TREATED_JUNGLE_PLANKS_ITEM, "minecraft", "jungle");
+        register_treated_plank("treated_acacia_planks", TREATED_ACACIA_PLANKS, TREATED_ACACIA_PLANKS_ITEM, "minecraft", "acacia");
+        register_treated_plank("treated_cherry_planks", TREATED_CHERRY_PLANKS, TREATED_CHERRY_PLANKS_ITEM, "minecraft", "cherry");
+        register_treated_plank("treated_dark_oak_planks", TREATED_DARK_OAK_PLANKS, TREATED_DARK_OAK_PLANKS_ITEM, "minecraft", "dark_oak");
+        register_treated_plank("treated_mangrove_planks", TREATED_MANGROVE_PLANKS, TREATED_MANGROVE_PLANKS_ITEM, "minecraft", "mangrove");
+        register_treated_plank("treated_bamboo_planks", TREATED_BAMBOO_PLANKS, TREATED_BAMBOO_PLANKS_ITEM, "minecraft", "bamboo");
+        register_treated_plank("treated_crimson_planks", TREATED_CRIMSON_PLANKS, TREATED_CRIMSON_PLANKS_ITEM, "minecraft", "crimson");
+        register_treated_plank("treated_warped_planks", TREATED_WARPED_PLANKS, TREATED_WARPED_PLANKS_ITEM, "minecraft", "warped");
 
         register_block("lustershroom", LUSTERSHROOM_PLANT, LUSTERSHROON_PLANT_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "red_mushroom")), LUSTERSHROON_PLANT_ITEM);
+        });
         register_block("lustershroom_block", LUSTERSHROOM_BLOCK, LUSTERSHROON_BLOCK_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "red_mushroom_block")), LUSTERSHROON_BLOCK_ITEM);
+        });
         register_block("luster_cluster", LUSTER_CLUSTER, LUSTER_CLUSTER_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+            content.add(LUSTER_CLUSTER_ITEM);
+        });
 
         register_block("trough", TROUGH, TROUGH_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "composter")), TROUGH_ITEM);
+        });
 
         BiomeModifications.addFeature(
                 BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_lustershrooms"))),
@@ -163,9 +178,12 @@ public class RegisterBlocks {
         );
     }
 
-    public static void register_treated_plank(String name, Block block, Item item) {
+    public static void register_treated_plank(String name, Block block, Item item, String source_mod, String plank_type) {
         register_block(name, block, item);
         LandPathNodeTypesRegistry.register(block, PathNodeType.DAMAGE_OTHER, PathNodeType.DAMAGE_OTHER);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of(source_mod, plank_type + "_planks")), item);
+        });
     }
 
     private static void register_block(String name, Block block, Item item) {

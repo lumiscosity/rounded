@@ -23,6 +23,8 @@
   "tag.item.rounded.trough_feed": "Trough Feed",
   "tag.item.rounded.treated_planks": "Treated Planks",
   "tag.item.c.grain": "Grain",
+  "tag.item.c.mushrooms": "Mushrooms",
+  "tag.item.c.mushroom_caps": "Mushroom Caps",
 
   "block.rounded.compat.treated_hevea_brasiliensis_planks": "Treated Hevea Brasiliensis Planks"
 }

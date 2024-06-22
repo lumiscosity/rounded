@@ -6,13 +6,13 @@
       "item": "rounded:lustershroom_block"
     },
     "X": {
-      "item": "minecraft:lapis_block"
+      "item": "minecraft:lapis_lazuli"
     }
   },
   "pattern": [
+    "X#X",
     "###",
-    "#X#",
-    "###"
+    "X#X"
   ],
   "result": {
     "count": 1,

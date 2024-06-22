@@ -22,5 +22,7 @@
   "tag.worldgen.biome.rounded.has_more_lustershrooms": "Ma więcej lśniącogrzybów",
   "tag.item.rounded.trough_feed": "Pokarm w korycie",
   "tag.item.rounded.treated_planks": "Impregnowane deski",
-  "tag.item.c.grain": "Zboże"
+  "tag.item.c.grain": "Zboże",
+  "tag.item.c.mushrooms": "Grzyby",
+  "tag.item.c.mushroom_caps": "Kapelusze grzybów"
 }

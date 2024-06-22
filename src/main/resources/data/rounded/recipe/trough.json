@@ -7,9 +7,13 @@
     },
     "O": {
       "item": "minecraft:smooth_stone"
+    },
+    "X": {
+      "item": "minecraft:smooth_stone_slab"
     }
   },
   "pattern": [
+    "X X",,
     "# #",
     "OOO"
   ],

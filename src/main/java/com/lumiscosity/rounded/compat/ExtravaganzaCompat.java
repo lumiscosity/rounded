@@ -16,7 +16,7 @@ public class ExtravaganzaCompat {
     public static final Item TREATED_HEVEA_BRASILIENSIS_PLANKS_ITEM = new BlockItem(TREATED_HEVEA_BRASILIENSIS_PLANKS, new Item.Settings());
 
     public static void register() {
-        register_treated_plank("compat/treated_hevea_brasiliensis_planks", TREATED_HEVEA_BRASILIENSIS_PLANKS, TREATED_HEVEA_BRASILIENSIS_PLANKS_ITEM);
+        register_treated_plank("compat/treated_hevea_brasiliensis_planks", TREATED_HEVEA_BRASILIENSIS_PLANKS, TREATED_HEVEA_BRASILIENSIS_PLANKS_ITEM, "extravaganza", "hevea_brasiliensis");
 
     }
 }
