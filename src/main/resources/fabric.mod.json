@@ -33,8 +33,7 @@
 		"fabricloader": ">=0.15.11",
 		"minecraft": "~1.21",
 		"java": ">=21",
-		"fabric-api": "*",
-		"dynamic_asset_generator": ">=6.1.0"
+		"fabric-api": "*"
 	},
 	"suggests": {
 	}
