@@ -11,6 +11,10 @@
     "rounded:treated_cherry_planks",
     "rounded:treated_bamboo_planks",
     "rounded:treated_crimson_planks",
-    "rounded:treated_warped_planks"
+    "rounded:treated_warped_planks",
+    {
+      "required": false,
+      "id": "rounded:compat/treated_hevea_brasiliensis_planks"
+    }
   ]
 }
