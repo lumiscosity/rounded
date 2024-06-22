@@ -1,6 +1,5 @@
 package com.lumiscosity.rounded.blocks;
 
-import com.lumiscosity.rounded.misc.RegisterSounds;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -16,7 +15,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
@@ -32,7 +30,6 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,8 +72,6 @@ public class TroughBlock extends Block implements InventoryProvider {
         BlockState blockState = world.getBlockState(pos);
         world.playSound(null, pos, TROUGH_FILL, SoundCategory.BLOCKS);
         double d = blockState.getOutlineShape(world, pos).getEndingCoord(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
-        double e = 0.13125F;
-        double f = 0.7375F;
         Random random = world.getRandom();
 
         for (int i = 0; i < 10; i++) {
@@ -112,7 +107,7 @@ public class TroughBlock extends Block implements InventoryProvider {
 
     @Override
     protected void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
-        if ((Integer)state.get(LEVEL) == 7) {
+        if (state.get(LEVEL) == 7) {
             world.scheduleBlockTick(pos, state.getBlock(), 20);
         }
     }
@@ -200,7 +195,7 @@ public class TroughBlock extends Block implements InventoryProvider {
     @Override
     public SidedInventory getInventory(BlockState state, WorldAccess world, BlockPos pos) {
         int i = state.get(LEVEL);
-        return (SidedInventory)(i < 7 ? new TroughBlock.TroughInventory(state, world, pos) : new TroughBlock.DummyInventory());
+        return i < 7 ? new TroughInventory(state, world, pos) : new DummyInventory();
     }
 
     static class TroughInventory extends SimpleInventory implements SidedInventory {
@@ -228,7 +223,7 @@ public class TroughBlock extends Block implements InventoryProvider {
 
         @Override
         public boolean canInsert(int slot, ItemStack stack, @Nullable Direction dir) {
-            return !this.dirty && dir == Direction.UP && ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.containsKey(stack.getItem());
+            return !this.dirty && dir == Direction.UP && stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")));
         }
 
         @Override
@@ -242,7 +237,6 @@ public class TroughBlock extends Block implements InventoryProvider {
             if (!itemStack.isEmpty()) {
                 this.dirty = true;
                 BlockState blockState = TroughBlock.addToTrough(null, this.state, this.world, this.pos, itemStack);
-                this.world.syncWorldEvent(WorldEvents.COMPOSTER_USED, this.pos, blockState != this.state ? 1 : 0);
                 this.removeStack(0);
             }
         }
