@@ -119,6 +119,7 @@ public class RegisterBlocks {
             AbstractBlock.Settings.create()
                     .mapColor(MapColor.CYAN)
                     .luminance(state -> 7)
+                    .sounds(BlockSoundGroup.WOOD)
     );
     public static final BlockItem LUSTERSHROON_BLOCK_ITEM= new BlockItem(LUSTERSHROOM_BLOCK, new Item.Settings());
     public static final Block LUSTER_CLUSTER = new Block(

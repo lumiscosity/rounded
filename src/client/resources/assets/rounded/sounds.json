@@ -1,0 +1,15 @@
+{
+  "trough_fill": {
+    "subtitle": "subtitles.rounded.block.trough_fill",
+    "sounds": [
+      "rounded:block/trough_fill1",
+      "rounded:block/trough_fill2"
+    ]
+  },
+  "trough_consume": {
+    "subtitle": "subtitles.rounded.block.trough_consume",
+    "sounds": [
+      "rounded:block/trough_consume"
+    ]
+  }
+}

@@ -1,5 +1,6 @@
 package com.lumiscosity.rounded.blocks;
 
+import com.lumiscosity.rounded.misc.RegisterSounds;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
@@ -36,6 +37,8 @@ import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
 import static com.lumiscosity.rounded.Rounded.MOD_ID;
+import static com.lumiscosity.rounded.misc.RegisterSounds.TROUGH_CONSUME;
+import static com.lumiscosity.rounded.misc.RegisterSounds.TROUGH_FILL;
 
 public class TroughBlock extends Block implements InventoryProvider {
 
@@ -68,9 +71,9 @@ public class TroughBlock extends Block implements InventoryProvider {
         this.setDefaultState(this.stateManager.getDefaultState().with(LEVEL, 0));
     }
 
-    public static void playEffects(World world, BlockPos pos, boolean fill) {
+    public static void playEffects(WorldAccess world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        world.playSoundAtBlockCenter(pos, fill ? SoundEvents.BLOCK_COMPOSTER_FILL_SUCCESS : SoundEvents.BLOCK_COMPOSTER_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F, false);
+        world.playSound(null, pos, TROUGH_FILL, SoundCategory.BLOCKS);
         double d = blockState.getOutlineShape(world, pos).getEndingCoord(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
         double e = 0.13125F;
         double f = 0.7375F;
@@ -120,7 +123,6 @@ public class TroughBlock extends Block implements InventoryProvider {
         if (stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")))) {
             if (i < 7 && !world.isClient) {
                 BlockState blockState = addToTrough(player, state, world, pos, stack);
-                world.syncWorldEvent(WorldEvents.COMPOSTER_USED, pos, state != blockState ? 1 : 0);
                 player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
                 stack.decrementUnlessCreative(1, player);
             }
@@ -133,11 +135,12 @@ public class TroughBlock extends Block implements InventoryProvider {
 
     static BlockState addToTrough(@Nullable Entity user, BlockState state, WorldAccess world, BlockPos pos, ItemStack stack) {
         int i = state.get(LEVEL);
-        if (((i != 0) && !(world.getRandom().nextDouble() < 0.5F)) || !stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")))) {
+        if (!stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")))) {
             return state;
         } else {
             int j = i + 1;
             BlockState blockState = state.with(LEVEL, j);
+            playEffects(world, pos);
             world.setBlockState(pos, blockState, Block.NOTIFY_ALL);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(user, blockState));
 
@@ -270,6 +273,7 @@ public class TroughBlock extends Block implements InventoryProvider {
     protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(LEVEL) > 0) {
             if (growAnimals(world, pos)) {
+                world.playSound(null, pos, TROUGH_CONSUME, SoundCategory.BLOCKS);
                 world.setBlockState(pos, consumeTroughStack(state), Block.NOTIFY_ALL);
             }
         }

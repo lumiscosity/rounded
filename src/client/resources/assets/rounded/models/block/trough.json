@@ -3,9 +3,9 @@
     "textures": {
         "particle": "rounded:block/trough_side",
         "top": "rounded:block/trough_top",
-        "bottom": "rounded:block/trough_bottom",
+        "bottom": "minecraft:block/smooth_stone",
         "side": "rounded:block/trough_side",
-        "inside": "rounded:block/trough_bottom"
+        "inside": "rounded:block/trough_inside"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],
