@@ -30,6 +30,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import net.minecraft.world.WorldEvents;
 import net.minecraft.world.event.GameEvent;
 import org.jetbrains.annotations.Nullable;
 
@@ -70,7 +71,6 @@ public class TroughBlock extends Block implements InventoryProvider {
 
     public static void playEffects(WorldAccess world, BlockPos pos) {
         BlockState blockState = world.getBlockState(pos);
-        world.playSound(null, pos, TROUGH_FILL, SoundCategory.BLOCKS);
         double d = blockState.getOutlineShape(world, pos).getEndingCoord(Direction.Axis.Y, 0.5, 0.5) + 0.03125;
         Random random = world.getRandom();
 
@@ -135,8 +135,9 @@ public class TroughBlock extends Block implements InventoryProvider {
         } else {
             int j = i + 1;
             BlockState blockState = state.with(LEVEL, j);
-            playEffects(world, pos);
+            world.playSound(null, pos, TROUGH_FILL, SoundCategory.BLOCKS);
             world.setBlockState(pos, blockState, Block.NOTIFY_ALL);
+            world.syncWorldEvent(WorldEvents.COMPOSTER_USED, pos, state != blockState ? 1 : 0);
             world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(user, blockState));
 
             return blockState;
