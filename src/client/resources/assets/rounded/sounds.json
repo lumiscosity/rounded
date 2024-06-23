@@ -11,5 +11,11 @@
     "sounds": [
       "rounded:block/trough_consume"
     ]
+  },
+  "trough_rustle": {
+    "subtitle": "subtitles.rounded.block.trough_rustle",
+    "sounds": [
+      "rounded:block/trough_rustle"
+    ]
   }
 }

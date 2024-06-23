@@ -1,10 +1,11 @@
 {
-	"required": true,
-	"package": "com.lumiscosity.rounded.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "com.lumiscosity.rounded.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TroughFallCancelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

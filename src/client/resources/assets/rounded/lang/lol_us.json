@@ -1,0 +1,29 @@
+{
+  "block.rounded.treated_oak_planks": "SHINEH oak bloc",
+  "block.rounded.treated_spruce_planks": "SHINEH dark wooden bloc",
+  "block.rounded.treated_birch_planks": "SHINEH lite woodezn blox",
+  "block.rounded.treated_jungle_planks": "SHINEH Junglz wodden bloc",
+  "block.rounded.treated_acacia_planks": "SHINEH Acashuh Plankz",
+  "block.rounded.treated_cherry_planks": "SHINEH Sakura plankz",
+  "block.rounded.treated_dark_oak_planks": "SHINEH Oranj Wud",
+  "block.rounded.treated_mangrove_planks": "SHINEH Mangroff PlAnKz",
+  "block.rounded.treated_bamboo_planks": "SHINEH Litle green stick plankz",
+  "block.rounded.treated_crimson_planks": "SHINEH Crimson planmks",
+  "block.rounded.treated_warped_planks": "SHINEH Warpt Plaenkz",
+  "block.rounded.lustershroom": "Glowy shroome",
+  "block.rounded.lustershroom_block": "Glowy shroom Blok",
+  "block.rounded.luster_cluster": "Blue Shroom thingy",
+  "block.rounded.trough": "Troff",
+
+  "subtitles.rounded.block.trough_fill": "Troff fill",
+  "subtitles.rounded.block.trough_consume": "Troff eated",
+  "subtitles.rounded.block.trough_rustle": "Troff shakey",
+
+  "tag.worldgen.biome.rounded.has_lustershrooms": "Haves glowyshooms",
+  "tag.worldgen.biome.rounded.has_more_lustershrooms": "Haves MOAR gloweyshroom",
+  "tag.item.rounded.trough_feed": "Yumy",
+  "tag.item.rounded.treated_planks": "SHINEH wud bloc",
+  "tag.item.c.grain": "Wheaty stuffs",
+  "tag.item.c.mushrooms": "Shrum",
+  "tag.item.c.mushroom_caps": "Shrum Hat"
+}

@@ -1,7 +1,6 @@
 package com.lumiscosity.rounded.mixin.client;
 
 import com.lumiscosity.rounded.blocks.TroughBlock;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.util.math.BlockPos;

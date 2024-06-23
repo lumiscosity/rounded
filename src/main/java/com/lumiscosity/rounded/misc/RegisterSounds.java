@@ -12,9 +12,12 @@ public class RegisterSounds {
     public static final SoundEvent TROUGH_FILL = SoundEvent.of(TROUGH_FILL_ID);
     public static final Identifier TROUGH_CONSUME_ID = Identifier.of(MOD_ID, "trough_consume");
     public static final SoundEvent TROUGH_CONSUME = SoundEvent.of(TROUGH_CONSUME_ID);
+    public static final Identifier TROUGH_RUSTLE_ID = Identifier.of(MOD_ID, "trough_rustle");
+    public static final SoundEvent TROUGH_RUSTLE = SoundEvent.of(TROUGH_RUSTLE_ID);
 
     public static void initSounds() {
         Registry.register(Registries.SOUND_EVENT, TROUGH_FILL_ID, TROUGH_FILL);
         Registry.register(Registries.SOUND_EVENT, TROUGH_CONSUME_ID, TROUGH_CONSUME);
+        Registry.register(Registries.SOUND_EVENT, TROUGH_RUSTLE_ID, TROUGH_RUSTLE);
     }
 }
