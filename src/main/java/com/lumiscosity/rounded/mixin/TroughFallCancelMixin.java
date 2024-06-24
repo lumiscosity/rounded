@@ -24,9 +24,15 @@ public class TroughFallCancelMixin {
     )
     private void troughFallCancel(Block block, World world, BlockState state, BlockPos pos, Entity entity, float fallDistance, Operation<Void> original) {
         BlockPos calc = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-        if ((world.getBlockState(calc).isOf(TROUGH)) && world.getBlockState(calc).get(LEVEL) == 7) {
-            world.playSound(null, calc, TROUGH_RUSTLE, SoundCategory.BLOCKS);
-            original.call(block, world, state, pos, entity, fallDistance * 0.2F);
+        if (world.getBlockState(calc).isOf(TROUGH)) {
+            if (world.getBlockState(calc).get(LEVEL) > 0) {
+                world.playSound(null, calc, TROUGH_RUSTLE, SoundCategory.BLOCKS);
+            }
+            if (world.getBlockState(calc).get(LEVEL) == 7) {
+                original.call(block, world, state, pos, entity, fallDistance * 0.2F);
+            } else {
+                original.call(block, world, state, pos, entity, fallDistance);
+            }
         } else {
             original.call(block, world, state, pos, entity, fallDistance);
         }

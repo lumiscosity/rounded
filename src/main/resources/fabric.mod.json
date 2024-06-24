@@ -3,7 +3,7 @@
 	"id": "rounded",
 	"version": "${version}",
 	"name": "Rounded",
-	"description": "Vanilla+ features to round out the base game",
+	"description": "Vanilla+ additions to round out the base game",
 	"authors": [
 		"lumiscosity"
 	],
