@@ -3,12 +3,13 @@
 	"id": "rounded",
 	"version": "${version}",
 	"name": "Rounded",
-	"description": "Vanilla+ features that round out the game",
+	"description": "Vanilla+ features to round out the base game",
 	"authors": [
 		"lumiscosity"
 	],
 	"contact": {
-		"homepage": "https://lumiscosity.neocities.org/",
+		"homepage": "https://modrinth.com/mod/rounded_mod",
+		"issues": "https://github.com/lumiscosity/rounded/issues",
 		"sources": "https://github.com/lumiscosity/rounded"
 	},
 	"license": "MIT",
