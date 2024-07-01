@@ -40,7 +40,6 @@ import static com.lumiscosity.rounded.misc.RegisterSounds.TROUGH_FILL;
 
 public class TroughBlock extends Block implements InventoryProvider {
 
-    public static final MapCodec<TroughBlock> CODEC = createCodec(TroughBlock::new);
     public static final int NUM_LEVELS = 7;
     public static final int MIN_LEVEL = 0;
     public static final int MAX_LEVEL = 7;
@@ -58,11 +57,6 @@ public class TroughBlock extends Block implements InventoryProvider {
                 shapes[8] = shapes[7];
             }
     );
-
-    @Override
-    public MapCodec<TroughBlock> getCodec() {
-        return CODEC;
-    }
 
     public TroughBlock(Settings settings) {
         super(settings);
@@ -91,40 +85,45 @@ public class TroughBlock extends Block implements InventoryProvider {
     }
 
     @Override
-    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return LEVEL_TO_COLLISION_SHAPE[state.get(LEVEL)];
     }
 
     @Override
-    protected VoxelShape getRaycastShape(BlockState state, BlockView world, BlockPos pos) {
+    public VoxelShape getRaycastShape(BlockState state, BlockView world, BlockPos pos) {
         return RAYCAST_SHAPE;
     }
 
     @Override
-    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return LEVEL_TO_COLLISION_SHAPE[0];
     }
 
     @Override
-    protected void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
+    public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (state.get(LEVEL) == 7) {
             world.scheduleBlockTick(pos, state.getBlock(), 20);
         }
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+
         int i = state.get(LEVEL);
+        ItemStack stack = player.getStackInHand(hand);
         if (stack.isIn(TagKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "trough_feed")))) {
             if (i < 7 && !world.isClient) {
                 BlockState blockState = addToTrough(player, state, world, pos, stack);
+                world.syncWorldEvent(WorldEvents.COMPOSTER_USED, pos, state != blockState ? 1 : 0);
                 player.incrementStat(Stats.USED.getOrCreateStat(stack.getItem()));
-                stack.decrementUnlessCreative(1, player);
+                if (!player.getAbilities().creativeMode) {
+                    stack.decrement(1);
+                }
             }
 
-            return ItemActionResult.success(world.isClient);
+            return ActionResult.success(world.isClient);
         } else {
-            return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
+            return ActionResult.PASS;
         }
     }
 
@@ -174,23 +173,18 @@ public class TroughBlock extends Block implements InventoryProvider {
     }
 
     @Override
-    protected boolean hasComparatorOutput(BlockState state) {
+    public boolean hasComparatorOutput(BlockState state) {
         return true;
     }
 
     @Override
-    protected int getComparatorOutput(BlockState state, World world, BlockPos pos) {
-        return (Integer)state.get(LEVEL);
+    public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
+        return state.get(LEVEL);
     }
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(LEVEL);
-    }
-
-    @Override
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
-        return false;
     }
 
     @Override
@@ -265,7 +259,7 @@ public class TroughBlock extends Block implements InventoryProvider {
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(LEVEL) > 0) {
             if (growAnimals(world, pos)) {
                 world.playSound(null, pos, TROUGH_CONSUME, SoundCategory.BLOCKS);

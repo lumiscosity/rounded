@@ -9,9 +9,4 @@ public class TreatedPlank extends Block {
     public TreatedPlank(AbstractBlock.Settings settings) {
         super(settings);
     }
-
-    @Override
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
-        return false;
-    }
 }

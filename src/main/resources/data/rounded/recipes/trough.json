@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "tag": "minecraft:planks"
+    },
+    "O": {
+      "item": "minecraft:smooth_stone"
+    },
+    "X": {
+      "item": "minecraft:smooth_stone_slab"
+    }
+  },
+  "pattern": [
+    "X X",
+    "# #",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "item": "rounded:treated_acacia_planks"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "rounded:treated_planks"
+    },
+    "@": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "@@",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:cartography_table"
+  }
+}

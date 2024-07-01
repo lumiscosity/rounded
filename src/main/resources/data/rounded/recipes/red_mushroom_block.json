@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "rounded:mushroom_block",
+  "key": {
+    "#": {
+      "item": "minecraft:red_mushroom"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:red_mushroom_block"
+  }
+}

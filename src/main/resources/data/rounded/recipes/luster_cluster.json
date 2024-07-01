@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "rounded:lustershroom_block"
+    },
+    "X": {
+      "item": "minecraft:lapis_lazuli"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "###",
+    "X#X"
+  ],
+  "result": {
+    "count": 1,
+    "item": "rounded:luster_cluster"
+  }
+}

@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
-import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.item.BlockItem;
@@ -28,12 +28,12 @@ import static com.lumiscosity.rounded.Rounded.MOD_ID;
 public class RegisterBlocks {
 
     public static final Block TREATED_OAK_PLANKS = new TreatedPlank(
-                    AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
+                    AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
             );
     public static final Block TREATED_SPRUCE_PLANKS = new TreatedPlank(
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.SPRUCE_BROWN)
-                            .instrument(NoteBlockInstrument.BELL)
+                            .instrument(Instrument.BELL)
                             .strength(2.0F, 3.0F)
                             .sounds(BlockSoundGroup.WOOD)
                             .burnable()
@@ -41,7 +41,7 @@ public class RegisterBlocks {
     public static final Block TREATED_BIRCH_PLANKS = new TreatedPlank(
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.PALE_YELLOW)
-                            .instrument(NoteBlockInstrument.BASS)
+                            .instrument(Instrument.BASS)
                             .strength(2.0F, 3.0F)
                             .sounds(BlockSoundGroup.WOOD)
                             .burnable()
@@ -49,41 +49,41 @@ public class RegisterBlocks {
     public static final Block TREATED_JUNGLE_PLANKS = new TreatedPlank(
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.DIRT_BROWN)
-                            .instrument(NoteBlockInstrument.BASS)
+                            .instrument(Instrument.BASS)
                             .strength(2.0F, 3.0F)
                             .sounds(BlockSoundGroup.WOOD)
                             .burnable()
             );
     public static final Block TREATED_ACACIA_PLANKS = new TreatedPlank(
-                    AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
+                    AbstractBlock.Settings.create().mapColor(MapColor.ORANGE).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
             );
     public static final Block TREATED_CHERRY_PLANKS = new TreatedPlank(
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.TERRACOTTA_WHITE)
-                            .instrument(NoteBlockInstrument.BASS)
+                            .instrument(Instrument.BASS)
                             .strength(2.0F, 3.0F)
                             .sounds(BlockSoundGroup.CHERRY_WOOD)
                             .burnable()
             );
     public static final Block TREATED_DARK_OAK_PLANKS = new TreatedPlank(
-                    AbstractBlock.Settings.create().mapColor(MapColor.BROWN).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
+                    AbstractBlock.Settings.create().mapColor(MapColor.BROWN).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
             );
     public static final Block TREATED_MANGROVE_PLANKS = new TreatedPlank(
-                    AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
+                    AbstractBlock.Settings.create().mapColor(MapColor.RED).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.WOOD).burnable()
             );
     public static final Block TREATED_BAMBOO_PLANKS = new TreatedPlank(
                     AbstractBlock.Settings.create()
                             .mapColor(MapColor.YELLOW)
-                            .instrument(NoteBlockInstrument.BASS)
+                            .instrument(Instrument.BASS)
                             .strength(2.0F, 3.0F)
                             .sounds(BlockSoundGroup.BAMBOO_WOOD)
                             .burnable()
             );
     public static final Block TREATED_CRIMSON_PLANKS = new Block(
-                    AbstractBlock.Settings.create().mapColor(MapColor.DULL_PINK).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
+                    AbstractBlock.Settings.create().mapColor(MapColor.DULL_PINK).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
             );
     public static final Block TREATED_WARPED_PLANKS = new Block(
-                    AbstractBlock.Settings.create().mapColor(MapColor.DARK_AQUA).instrument(NoteBlockInstrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
+                    AbstractBlock.Settings.create().mapColor(MapColor.DARK_AQUA).instrument(Instrument.BASS).strength(2.0F, 3.0F).sounds(BlockSoundGroup.NETHER_WOOD)
             );
 
     public static final Item TREATED_OAK_PLANKS_ITEM = new BlockItem(TREATED_OAK_PLANKS, new Item.Settings());
@@ -93,7 +93,7 @@ public class RegisterBlocks {
     public static final Item TREATED_ACACIA_PLANKS_ITEM = new BlockItem(TREATED_ACACIA_PLANKS, new Item.Settings());
     public static final Item TREATED_CHERRY_PLANKS_ITEM = new BlockItem(TREATED_CHERRY_PLANKS, new Item.Settings());
     public static final Item TREATED_DARK_OAK_PLANKS_ITEM = new BlockItem(TREATED_DARK_OAK_PLANKS, new Item.Settings());
-    public static final Item TREATED_MANGROVE_PLANKS_ITEM = new BlockItem(TREATED_OAK_PLANKS, new Item.Settings());
+    public static final Item TREATED_MANGROVE_PLANKS_ITEM = new BlockItem(TREATED_MANGROVE_PLANKS, new Item.Settings());
     public static final Item TREATED_BAMBOO_PLANKS_ITEM = new BlockItem(TREATED_BAMBOO_PLANKS, new Item.Settings());
     public static final Item TREATED_CRIMSON_PLANKS_ITEM = new BlockItem(TREATED_CRIMSON_PLANKS, new Item.Settings());
     public static final Item TREATED_WARPED_PLANKS_ITEM = new BlockItem(TREATED_WARPED_PLANKS, new Item.Settings());
@@ -126,12 +126,12 @@ public class RegisterBlocks {
     );
     public static final BlockItem LUSTERSHROON_BLOCK_ITEM= new BlockItem(LUSTERSHROOM_BLOCK, new Item.Settings());
     public static final Block LUSTER_CLUSTER = new Block(
-            AbstractBlock.Settings.create().luminance(state -> 7).mapColor(MapColor.CYAN).instrument(NoteBlockInstrument.CHIME).strength(1.5F).sounds(BlockSoundGroup.DRIPSTONE_BLOCK)
+            AbstractBlock.Settings.create().luminance(state -> 7).mapColor(MapColor.CYAN).instrument(Instrument.CHIME).strength(1.5F).sounds(BlockSoundGroup.DRIPSTONE_BLOCK)
     );
     public static final BlockItem LUSTER_CLUSTER_ITEM = new BlockItem(LUSTER_CLUSTER, new Item.Settings());
 
     public static final Block TROUGH = new TroughBlock(
-            AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(NoteBlockInstrument.BASS).strength(0.6F).sounds(BlockSoundGroup.WOOD).burnable().ticksRandomly()
+            AbstractBlock.Settings.create().mapColor(MapColor.OAK_TAN).instrument(Instrument.BASS).strength(0.6F).sounds(BlockSoundGroup.WOOD).burnable().ticksRandomly()
     );
     public static final Item TROUGH_ITEM = new BlockItem(TROUGH, new Item.Settings());
 

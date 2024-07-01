@@ -17,7 +17,7 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 
 public class LustershroomPlant extends MushroomPlantBlock {
     public LustershroomPlant(RegistryKey<ConfiguredFeature<?, ?>> featureKey, Settings settings) {
-        super(featureKey, settings);
+        super(settings, featureKey);
     }
 
     @Override
@@ -26,14 +26,14 @@ public class LustershroomPlant extends MushroomPlantBlock {
     }
 
     @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         BlockPos blockPos = pos.down();
         BlockState blockState = world.getBlockState(blockPos);
         return blockState.isIn(BlockTags.MUSHROOM_GROW_BLOCK) || this.canPlantOnTop(blockState, world, blockPos);
     }
 
     @Override
-    protected void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (random.nextInt(30) == 0) {
             int i = 5;
             int j = 4;
