@@ -93,7 +93,7 @@ public class RegisterBlocks {
     public static final Item TREATED_ACACIA_PLANKS_ITEM = new BlockItem(TREATED_ACACIA_PLANKS, new Item.Settings());
     public static final Item TREATED_CHERRY_PLANKS_ITEM = new BlockItem(TREATED_CHERRY_PLANKS, new Item.Settings());
     public static final Item TREATED_DARK_OAK_PLANKS_ITEM = new BlockItem(TREATED_DARK_OAK_PLANKS, new Item.Settings());
-    public static final Item TREATED_MANGROVE_PLANKS_ITEM = new BlockItem(TREATED_OAK_PLANKS, new Item.Settings());
+    public static final Item TREATED_MANGROVE_PLANKS_ITEM = new BlockItem(TREATED_MANGROVE_PLANKS, new Item.Settings());
     public static final Item TREATED_BAMBOO_PLANKS_ITEM = new BlockItem(TREATED_BAMBOO_PLANKS, new Item.Settings());
     public static final Item TREATED_CRIMSON_PLANKS_ITEM = new BlockItem(TREATED_CRIMSON_PLANKS, new Item.Settings());
     public static final Item TREATED_WARPED_PLANKS_ITEM = new BlockItem(TREATED_WARPED_PLANKS, new Item.Settings());
