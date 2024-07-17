@@ -2,6 +2,7 @@ package com.lumiscosity.rounded;
 
 import com.lumiscosity.rounded.blocks.RegisterBlocks;
 import com.lumiscosity.rounded.compat.ExtravaganzaCompat;
+import com.lumiscosity.rounded.compat.WilderWildCompat;
 import com.lumiscosity.rounded.misc.RegisterSounds;
 import com.lumiscosity.rounded.misc.RegisterTrades;
 import net.fabricmc.api.ModInitializer;
@@ -22,6 +23,9 @@ public class Rounded implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("extravaganza")) {
 			ExtravaganzaCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("wilderwild")) {
+			WilderWildCompat.register();
 		}
 
 		LOGGER.info("Rounded init complete!");

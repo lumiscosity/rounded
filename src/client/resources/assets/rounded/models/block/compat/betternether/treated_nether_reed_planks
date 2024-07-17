@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rounded:block/compat/betternether/treated_nether_reed_planks"
+  }
+}
