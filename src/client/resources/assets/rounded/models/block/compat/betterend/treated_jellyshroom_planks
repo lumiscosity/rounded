@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rounded:block/compat/betterend/treated_jellyshroom_planks"
+  }
+}
