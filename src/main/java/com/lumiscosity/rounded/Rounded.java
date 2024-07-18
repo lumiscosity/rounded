@@ -1,7 +1,7 @@
 package com.lumiscosity.rounded;
 
 import com.lumiscosity.rounded.blocks.RegisterBlocks;
-import com.lumiscosity.rounded.compat.ExtravaganzaCompat;
+import com.lumiscosity.rounded.compat.*;
 import com.lumiscosity.rounded.misc.RegisterSounds;
 import com.lumiscosity.rounded.misc.RegisterTrades;
 import net.fabricmc.api.ModInitializer;
@@ -22,6 +22,28 @@ public class Rounded implements ModInitializer {
 
 		if (FabricLoader.getInstance().isModLoaded("extravaganza")) {
 			ExtravaganzaCompat.register();
+		}
+
+		if (FabricLoader.getInstance().isModLoaded("betterend")) {
+			BetterendCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("betternether")) {
+			BetternetherCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("biomesoplenty")) {
+			BiomesoplentyCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("cinderscapes")) {
+			CinderscapesCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("terrestria")) {
+			TerrestriaCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("traverse")) {
+			TraverseCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("wilderwild")) {
+			WilderwildCompat.register();
 		}
 
 		LOGGER.info("Rounded init complete!");

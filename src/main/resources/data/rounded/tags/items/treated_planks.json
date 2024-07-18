@@ -15,6 +15,194 @@
     {
       "required": false,
       "id": "rounded:compat/treated_hevea_brasiliensis_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_dragon_tree_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_end_lotus_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_helix_tree_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_jellyshroom_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_lacugrove_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_lucernia_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_mossy_glowshroom_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_pythadendron_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_tenanea_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betterend/treated_umbrella_tree_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_anchor_tree_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_mushroom_fir_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_nether_mushroom_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_nether_reed_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_nether_sakura_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_rubeus_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_stalagnate_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_wart_planks_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_willow_planks_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_dead_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_empyreal_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_fir_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_hellbark_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_jacaranda_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_magic_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_mahogany_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_maple_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_palm_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_pine_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_redwood_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_umbran_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/biomesoplenty/treated_willow_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/cinderscapes/treated_scorched_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/cinderscapes/treated_umbral_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_cypress_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_hemlock_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_japanese_maple_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_rainbow_eucalyptus_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_redwood_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_rubber_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_sakura_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_willow_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_yucca_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/traverse/treated_fir_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/wilderwild/treated_baobab_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/wilderwild/treated_cypress_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/wilderwild/treated_palm_planks"
     }
   ]
 }
