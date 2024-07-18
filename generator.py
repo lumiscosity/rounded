@@ -158,14 +158,14 @@ def add_treated_plank(m, n):
 
     # item tag
     file = JsonFile(source_path="src/main/resources/data/rounded/tags/item/treated_planks.json").data
-    print(file)
-    file["values"].append(
-        {
-            "required": False,
-            "id": f"rounded:compat/{m}/{t}"
-        }
-    )
-    JsonFile(file).dump(origin="./", path="src/main/resources/data/rounded/tags/item/treated_planks.json")
+    tag = {
+        "required": False,
+        "id": f"rounded:compat/{m}/{t}"
+    }
+
+    if tag not in file["values"]:
+        file["values"].append(tag)
+        JsonFile(file).dump(origin="./", path="src/main/resources/data/rounded/tags/item/treated_planks.json")
 
     # blockstate
     file = {
@@ -200,6 +200,49 @@ def add_treated_plank(m, n):
     JsonFile(file).dump(origin="./", path="src/client/resources/assets/rounded/lang/en_us.json")
 
 
+def add_treated_plank_code(m, l):
+    module_name = m.replace("_", " ").title().replace(" ", "") + "Compat"
+    file = """package com.lumiscosity.rounded.compat;
+
+            import net.minecraft.block.AbstractBlock;
+            import net.minecraft.block.Block;
+            import net.minecraft.item.BlockItem;
+            import net.minecraft.item.Item;
+            import net.minecraft.registry.Registries;
+            import net.minecraft.util.Identifier;
+
+            import static com.lumiscosity.rounded.blocks.RegisterBlocks.register_treated_plank;
+
+            public class {} {{""".format(module_name)
+
+    for i in l:
+        p = f"{i}_planks"
+        t = f"treated_{p}"
+
+        file += f"""
+            public static final Block {t.upper()} = new Block(
+                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("{m}", "{p}")))
+            );
+            public static final Item {t.upper()}_ITEM = new BlockItem({t.upper()}, new Item.Settings());
+        
+        """
+
+    file += "   public static void register() {"
+
+    for i in l:
+        t = f"treated_{i}_planks"
+
+        file += f'        register_treated_plank("compat/{m}/{t}", {t.upper()}, {t.upper()}_ITEM, "{m}", "{i}");\n'
+
+    file += """
+        }
+    }"""
+
+    module = open(f"src/main/java/com/lumiscosity/rounded/compat/{module_name}.java", "w")
+    module.write(file)
+    module.close()
+
 for i in compat_generated.keys():
+    add_treated_plank_code(i, compat_generated[i])
     for j in compat_generated[i]:
         add_treated_plank(i, j)
