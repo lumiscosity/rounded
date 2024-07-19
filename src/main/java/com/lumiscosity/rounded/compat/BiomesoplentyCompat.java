@@ -10,84 +10,84 @@ package com.lumiscosity.rounded.compat;
             import static com.lumiscosity.rounded.blocks.RegisterBlocks.register_treated_plank;
 
             public class BiomesoplentyCompat {
-            public static final Block TREATED_DEAD_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "dead_planks")))
-            );
-            public static final Item TREATED_DEAD_PLANKS_ITEM = new BlockItem(TREATED_DEAD_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_EMPYREAL_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "empyreal_planks")))
-            );
-            public static final Item TREATED_EMPYREAL_PLANKS_ITEM = new BlockItem(TREATED_EMPYREAL_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_FIR_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "fir_planks")))
-            );
-            public static final Item TREATED_FIR_PLANKS_ITEM = new BlockItem(TREATED_FIR_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_HELLBARK_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "hellbark_planks")))
-            );
-            public static final Item TREATED_HELLBARK_PLANKS_ITEM = new BlockItem(TREATED_HELLBARK_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_JACARANDA_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "jacaranda_planks")))
-            );
-            public static final Item TREATED_JACARANDA_PLANKS_ITEM = new BlockItem(TREATED_JACARANDA_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_MAGIC_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "magic_planks")))
-            );
-            public static final Item TREATED_MAGIC_PLANKS_ITEM = new BlockItem(TREATED_MAGIC_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_MAHOGANY_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "mahogany_planks")))
-            );
-            public static final Item TREATED_MAHOGANY_PLANKS_ITEM = new BlockItem(TREATED_MAHOGANY_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_MAPLE_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "maple_planks")))
-            );
-            public static final Item TREATED_MAPLE_PLANKS_ITEM = new BlockItem(TREATED_MAPLE_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_PALM_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "palm_planks")))
-            );
-            public static final Item TREATED_PALM_PLANKS_ITEM = new BlockItem(TREATED_PALM_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_PINE_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "pine_planks")))
-            );
-            public static final Item TREATED_PINE_PLANKS_ITEM = new BlockItem(TREATED_PINE_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_REDWOOD_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "redwood_planks")))
-            );
-            public static final Item TREATED_REDWOOD_PLANKS_ITEM = new BlockItem(TREATED_REDWOOD_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_UMBRAN_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "umbran_planks")))
-            );
-            public static final Item TREATED_UMBRAN_PLANKS_ITEM = new BlockItem(TREATED_UMBRAN_PLANKS, new Item.Settings());
-        
-        
-            public static final Block TREATED_WILLOW_PLANKS = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "willow_planks")))
-            );
-            public static final Item TREATED_WILLOW_PLANKS_ITEM = new BlockItem(TREATED_WILLOW_PLANKS, new Item.Settings());
-        
-           public static void register() {        register_treated_plank("compat/biomesoplenty/treated_dead_planks", TREATED_DEAD_PLANKS, TREATED_DEAD_PLANKS_ITEM, "biomesoplenty", "dead");
+                public static final Block TREATED_DEAD_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "dead_planks")))
+                );
+                public static final Item TREATED_DEAD_PLANKS_ITEM = new BlockItem(TREATED_DEAD_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_EMPYREAL_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "empyreal_planks")))
+                );
+                public static final Item TREATED_EMPYREAL_PLANKS_ITEM = new BlockItem(TREATED_EMPYREAL_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_FIR_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "fir_planks")))
+                );
+                public static final Item TREATED_FIR_PLANKS_ITEM = new BlockItem(TREATED_FIR_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_HELLBARK_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "hellbark_planks")))
+                );
+                public static final Item TREATED_HELLBARK_PLANKS_ITEM = new BlockItem(TREATED_HELLBARK_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_JACARANDA_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "jacaranda_planks")))
+                );
+                public static final Item TREATED_JACARANDA_PLANKS_ITEM = new BlockItem(TREATED_JACARANDA_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_MAGIC_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "magic_planks")))
+                );
+                public static final Item TREATED_MAGIC_PLANKS_ITEM = new BlockItem(TREATED_MAGIC_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_MAHOGANY_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "mahogany_planks")))
+                );
+                public static final Item TREATED_MAHOGANY_PLANKS_ITEM = new BlockItem(TREATED_MAHOGANY_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_MAPLE_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "maple_planks")))
+                );
+                public static final Item TREATED_MAPLE_PLANKS_ITEM = new BlockItem(TREATED_MAPLE_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_PALM_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "palm_planks")))
+                );
+                public static final Item TREATED_PALM_PLANKS_ITEM = new BlockItem(TREATED_PALM_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_PINE_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "pine_planks")))
+                );
+                public static final Item TREATED_PINE_PLANKS_ITEM = new BlockItem(TREATED_PINE_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_REDWOOD_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "redwood_planks")))
+                );
+                public static final Item TREATED_REDWOOD_PLANKS_ITEM = new BlockItem(TREATED_REDWOOD_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_UMBRAN_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "umbran_planks")))
+                );
+                public static final Item TREATED_UMBRAN_PLANKS_ITEM = new BlockItem(TREATED_UMBRAN_PLANKS, new Item.Settings());
+            
+            
+                public static final Block TREATED_WILLOW_PLANKS = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("biomesoplenty", "willow_planks")))
+                );
+                public static final Item TREATED_WILLOW_PLANKS_ITEM = new BlockItem(TREATED_WILLOW_PLANKS, new Item.Settings());
+            
+               public static void register() {        register_treated_plank("compat/biomesoplenty/treated_dead_planks", TREATED_DEAD_PLANKS, TREATED_DEAD_PLANKS_ITEM, "biomesoplenty", "dead");
         register_treated_plank("compat/biomesoplenty/treated_empyreal_planks", TREATED_EMPYREAL_PLANKS, TREATED_EMPYREAL_PLANKS_ITEM, "biomesoplenty", "empyreal");
         register_treated_plank("compat/biomesoplenty/treated_fir_planks", TREATED_FIR_PLANKS, TREATED_FIR_PLANKS_ITEM, "biomesoplenty", "fir");
         register_treated_plank("compat/biomesoplenty/treated_hellbark_planks", TREATED_HELLBARK_PLANKS, TREATED_HELLBARK_PLANKS_ITEM, "biomesoplenty", "hellbark");

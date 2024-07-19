@@ -203,6 +203,18 @@
     {
       "required": false,
       "id": "rounded:compat/wilderwild/treated_palm_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_wart_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/betternether/treated_willow_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/terrestria/treated_yucca_palm_planks"
     }
   ]
 }

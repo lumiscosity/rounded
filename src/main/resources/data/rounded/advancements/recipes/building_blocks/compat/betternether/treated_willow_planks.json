@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rounded:compat/terrestria/treated_yucca_planks"
+        "recipe": "rounded:compat/betternether/treated_willow_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,14 +28,14 @@
   ],
   "rewards": {
     "recipes": [
-      "rounded:compat/terrestria/treated_yucca_planks"
+      "rounded:compat/betternether/treated_willow_planks"
     ]
   },
   "fabric:load_conditions": [
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
-        "terrestria"
+        "betternether"
       ]
     }
   ]

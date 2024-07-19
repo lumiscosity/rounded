@@ -4,7 +4,7 @@
   "group": "rounded:treated_planks",
   "key": {
     "#": {
-      "item": "terrestria:yucca_planks"
+      "item": "terrestria:yucca_palm_planks"
     },
     "X": {
       "item": "minecraft:honeycomb"
@@ -17,7 +17,7 @@
   ],
   "result": {
     "count": 8,
-    "item": "rounded:compat/terrestria/treated_yucca_planks"
+    "item": "rounded:compat/terrestria/treated_yucca_palm_planks"
   },
   "fabric:load_conditions": [
     {

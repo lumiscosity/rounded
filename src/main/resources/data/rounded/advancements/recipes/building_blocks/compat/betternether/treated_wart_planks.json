@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rounded:compat/betternether/treated_willow_planks_planks"
+        "recipe": "rounded:compat/betternether/treated_wart_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "rounded:compat/betternether/treated_willow_planks_planks"
+      "rounded:compat/betternether/treated_wart_planks"
     ]
   },
   "fabric:load_conditions": [

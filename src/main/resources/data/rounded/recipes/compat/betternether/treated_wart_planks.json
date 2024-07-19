@@ -4,7 +4,7 @@
   "group": "rounded:treated_planks",
   "key": {
     "#": {
-      "item": "betternether:willow_planks_planks"
+      "item": "betternether:wart_planks"
     },
     "X": {
       "item": "minecraft:honeycomb"
@@ -17,7 +17,7 @@
   ],
   "result": {
     "count": 8,
-    "item": "rounded:compat/betternether/treated_willow_planks_planks"
+    "item": "rounded:compat/betternether/treated_wart_planks"
   },
   "fabric:load_conditions": [
     {
