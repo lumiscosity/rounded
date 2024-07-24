@@ -26,8 +26,8 @@ compat_generated = {
         "nether_sakura",
         "rubeus",
         "stalagnate",
-        "wart_planks",
-        "willow_planks"
+        "wart",
+        "willow"
     ],
     "biomesoplenty": [
         "dead",
@@ -57,7 +57,7 @@ compat_generated = {
         "rubber",
         "sakura",
         "willow",
-        "yucca"
+        "yucca_palm"
     ],
     "traverse": [
         "fir"
@@ -69,6 +69,12 @@ compat_generated = {
     ],
 }
 
+# some mods return empty block settings, so we force them to use oak plank data instead:
+naughty_mod_corner = [
+    "terrestria",
+    "traverse",
+    "wilderwild"
+]
 
 def save(file: JsonFile, path):
     if not os.path.exists(os.path.dirname(path)):
@@ -156,16 +162,53 @@ def add_treated_plank(m, n):
     }
     save(JsonFile(file), f"src/main/resources/data/rounded/advancement/recipes/building_blocks/compat/{m}/{t}")
 
-    # item tag
-    file = JsonFile(source_path="src/main/resources/data/rounded/tags/item/treated_planks.json").data
+    # loot table
+    file = {
+        "type": "minecraft:block",
+        "pools": [
+            {
+                "bonus_rolls": 0.0,
+                "conditions": [
+                    {
+                        "condition": "minecraft:survives_explosion"
+                    }
+                ],
+                "entries": [
+                    {
+                        "type": "minecraft:item",
+                        "name": f"rounded:compat/{m}/{t}"
+                    }
+                ],
+                "rolls": 1.0
+            }
+        ],
+        "random_sequence": f"rounded:blocks/compat/{m}/{t}",
+        "fabric:load_conditions": [
+            {
+                "condition": "fabric:all_mods_loaded",
+                "values": [
+                    f"{m}"
+                ]
+            }
+        ]
+    }
+    save(JsonFile(file), f"src/main/resources/data/rounded/loot_table/blocks/compat/{m}/{t}.json")
+
+    # tags
     tag = {
         "required": False,
         "id": f"rounded:compat/{m}/{t}"
     }
 
+    file = JsonFile(source_path="src/main/resources/data/rounded/tags/item/treated_planks.json").data
     if tag not in file["values"]:
         file["values"].append(tag)
         JsonFile(file).dump(origin="./", path="src/main/resources/data/rounded/tags/item/treated_planks.json")
+
+    file = JsonFile(source_path="src/main/resources/data/minecraft/tags/block/mineable/axe.json").data
+    if tag not in file["values"]:
+        file["values"].append(tag)
+        JsonFile(file).dump(origin="./", path="src/main/resources/data/minecraft/tags/block/mineable/axe.json")
 
     # blockstate
     file = {
@@ -219,13 +262,22 @@ def add_treated_plank_code(m, l):
         p = f"{i}_planks"
         t = f"treated_{p}"
 
-        file += f"""
-            public static final Block {t.upper()} = new Block(
-                AbstractBlock.Settings.copy(Registries.BLOCK.get(Identifier.of("{m}", "{p}")))
-            );
-            public static final Item {t.upper()}_ITEM = new BlockItem({t.upper()}, new Item.Settings());
-        
-        """
+        if m in naughty_mod_corner:
+            file += f"""
+                public static final Block {t.upper()} = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("minecraft", "oak_planks")))
+                );
+                public static final Item {t.upper()}_ITEM = new BlockItem({t.upper()}, new Item.Settings());
+            
+            """
+        else:
+            file += f"""
+                public static final Block {t.upper()} = new Block(
+                    Block.Settings.copy(Registries.BLOCK.get(Identifier.of("{m}", "{p}")))
+                );
+                public static final Item {t.upper()}_ITEM = new BlockItem({t.upper()}, new Item.Settings());
+            
+            """
 
     file += "   public static void register() {"
 

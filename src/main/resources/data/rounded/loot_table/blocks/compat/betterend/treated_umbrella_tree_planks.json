@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rounded:compat/betterend/treated_umbrella_tree_planks"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rounded:blocks/compat/betterend/treated_umbrella_tree_planks",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "betterend"
+      ]
+    }
+  ]
+}
