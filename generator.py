@@ -117,7 +117,7 @@ def add_treated_plank(m, n):
             }
         ]
     }
-    save(JsonFile(file), f"src/main/resources/data/rounded/recipe/compat/{m}/{t}")
+    save(JsonFile(file), f"src/main/resources/data/rounded/recipe/compat/{m}/{t}.json")
 
     # recipe advancement
     file = {
@@ -160,7 +160,7 @@ def add_treated_plank(m, n):
             }
         ]
     }
-    save(JsonFile(file), f"src/main/resources/data/rounded/advancement/recipes/building_blocks/compat/{m}/{t}")
+    save(JsonFile(file), f"src/main/resources/data/rounded/advancement/recipes/building_blocks/compat/{m}/{t}.json")
 
     # loot table
     file = {
@@ -218,7 +218,7 @@ def add_treated_plank(m, n):
             }
         }
     }
-    save(JsonFile(file), f"src/client/resources/assets/rounded/blockstates/compat/{m}/{t}")
+    save(JsonFile(file), f"src/client/resources/assets/rounded/blockstates/compat/{m}/{t}.json")
 
     # block model
     file = {
@@ -227,13 +227,13 @@ def add_treated_plank(m, n):
             "all": f"rounded:block/compat/{m}/{t}"
         }
     }
-    save(JsonFile(file), f"src/client/resources/assets/rounded/models/block/compat/{m}/{t}")
+    save(JsonFile(file), f"src/client/resources/assets/rounded/models/block/compat/{m}/{t}.json")
 
     # item model
     file = {
         "parent": f"rounded:block/compat/{m}/{t}"
     }
-    save(JsonFile(file), f"src/client/resources/assets/rounded/models/item/compat/{m}/{t}")
+    save(JsonFile(file), f"src/client/resources/assets/rounded/models/item/compat/{m}/{t}.json")
 
     # language key
     # TODO: add automatic ripping for other languages, if they are present
