@@ -86,14 +86,6 @@
     },
     {
       "required": false,
-      "id": "rounded:compat/betternether/treated_wart_planks_planks"
-    },
-    {
-      "required": false,
-      "id": "rounded:compat/betternether/treated_willow_planks_planks"
-    },
-    {
-      "required": false,
       "id": "rounded:compat/biomesoplenty/treated_dead_planks"
     },
     {
@@ -183,10 +175,6 @@
     {
       "required": false,
       "id": "rounded:compat/terrestria/treated_willow_planks"
-    },
-    {
-      "required": false,
-      "id": "rounded:compat/terrestria/treated_yucca_planks"
     },
     {
       "required": false,
