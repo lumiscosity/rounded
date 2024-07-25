@@ -9,6 +9,7 @@ public class RegisterTrades {
         TradeOfferHelper.registerWanderingTraderOffers(1,
                 factories -> {
                     new TradeOffers.SellItemFactory(RegisterBlocks.LUSTERSHROON_PLANT_ITEM, 1, 1, 12, 1);
+                    new TradeOffers.SellItemFactory(RegisterBlocks.BLADDERWRACK_ITEM, 1, 6, 12, 1);
                 });
     }
 }

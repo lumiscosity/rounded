@@ -1,0 +1,19 @@
+{
+  "feature": "rounded:patch_bladderwrack",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "surface_water_depth_filter",
+      "max_water_depth": 9
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rounded:block/smooth_prismarine_slab"
+    },
+    "type=double": {
+      "model": "rounded:block/smooth_prismarine"
+    },
+    "type=top": {
+      "model": "rounded:block/smooth_prismarine_slab_top"
+    }
+  }
+}

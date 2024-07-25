@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "rounded:block/dead_bladderwrack_wall",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "rounded:block/dead_bladderwrack_wall"
+    },
+    "facing=south": {
+      "model": "rounded:block/dead_bladderwrack_wall",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "rounded:block/dead_bladderwrack_wall",
+      "y": 270
+    }
+  }
+}
