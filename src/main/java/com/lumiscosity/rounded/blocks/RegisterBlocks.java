@@ -197,7 +197,11 @@ public class RegisterBlocks {
             AbstractBlock.Settings.create().mapColor(MapColor.DIAMOND_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F)
     );
     public static final BlockItem MOISTURE_DETECTOR_ITEM = new BlockItem(MOISTURE_DETECTOR, new Item.Settings());
-    public static final BlockEntityType<MoistureDetectorBlock.MoistureDetectorBlockEntity> MOISTURE_DETECTOR_BE = register_be("moisture_detector",BlockEntityType.Builder.create(MoistureDetectorBlock.MoistureDetectorBlockEntity::new, MOISTURE_DETECTOR));
+    public static final BlockEntityType<MoistureDetectorBlock.MoistureDetectorBlockEntity> MOISTURE_DETECTOR_BE = Registry.register(
+            Registries.BLOCK_ENTITY_TYPE,
+            Identifier.of(MOD_ID, "moisture_detector"),
+            BlockEntityType.Builder.create(MoistureDetectorBlock.MoistureDetectorBlockEntity::new, MOISTURE_DETECTOR).build()
+    );
 
 
 
@@ -285,10 +289,5 @@ public class RegisterBlocks {
     private static void register_block(String name, Block block, Item item) {
         Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, name), block);
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item);
-    }
-
-    private static <T extends BlockEntity> BlockEntityType<T> register_be(String id, BlockEntityType.Builder<T> builder) {
-        Type<?> type = Util.getChoiceType(TypeReferences.BLOCK_ENTITY, id);
-        return Registry.register(Registries.BLOCK_ENTITY_TYPE, id, builder.build(type));
     }
 }

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "minecraft:glass"
+    },
+    "X": {
+      "item": "minecraft:quartz"
+    },
+    "O": {
+      "item": "rounded:smooth_prismarine"
+    }
+  },
+  "pattern": [
+    "###",
+    "XXX",
+    "OOO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "rounded:moisture_detector"
+  }
+}

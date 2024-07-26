@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "rounded:lustershroom",
     "rounded:lustershroom_block",
     "rounded:luster_cluster",
     "rounded:treated_oak_planks",

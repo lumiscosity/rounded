@@ -33,12 +33,17 @@ public class MoistureDetectorBlock extends BlockWithEntity {
     }
 
     @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
+    }
+
+    @Override
     protected int getWeakRedstonePower(BlockState state, BlockView world, BlockPos pos, Direction direction) {
         return state.get(POWER);
     }
 
     public static void getWaterLevel(BlockState state, World world, BlockPos pos, FluidState water) {
-        int i = water.getLevel() * 2;
+        int i = water.getLevel();
         i = MathHelper.clamp(i, 0, 15);
         if (state.get(POWER) != i) {
             world.setBlockState(pos, state.with(POWER, i), Block.NOTIFY_ALL);
@@ -80,11 +85,15 @@ public class MoistureDetectorBlock extends BlockWithEntity {
             if (world.getBlockState(check_pos).isOf(Blocks.WATER)) {
                 getWaterLevel(state, world, pos, world.getFluidState(check_pos));
             } else if (world.getBlockState(check_pos).contains(Properties.WATERLOGGED) ? world.getBlockState(check_pos).get(Properties.WATERLOGGED) : false) {
-                if (state.get(POWER) != 15) {
-                    world.setBlockState(pos, state.with(POWER, 15), Block.NOTIFY_ALL);
+                if (state.get(POWER) != 9) {
+                    world.setBlockState(pos, state.with(POWER, 9), Block.NOTIFY_ALL);
                 }
-            } else if (world.hasRain(pos)) {
+            } else if (world.getBlockState(check_pos).isOf(Blocks.AIR) && world.hasRain(check_pos)) {
                 getRainLevel(state, world, pos);
+            } else {
+                if (state.get(POWER) != 0) {
+                    world.setBlockState(pos, state.with(POWER, 0), Block.NOTIFY_ALL);
+                }
             }
         }
     }
