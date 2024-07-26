@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
-    "rounded:luster_cluster"
+    "rounded:luster_cluster",
+    "rounded:smooth_prismarine",
+    "rounded:smooth_prismarine_slab",
+    "rounded:chiseled_prismarine_bricks",
+    "rounded:prismarine_lantern",
+    "rounded:dead_bladderwrack",
+    "rounded:bladderwrack",
+    "rounded:dead_bladderwrack_block",
+    "rounded:bladderwrack_block"
   ]
 }

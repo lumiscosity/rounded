@@ -20,11 +20,14 @@
   "block.rounded.prismarine_lantern": "Prismarine Lantern",
   "block.rounded.dead_bladderwrack": "Dead Bladderwrack",
   "block.rounded.bladderwrack": "Bladderwrack",
+  "block.rounded.dead_bladderwrack_block": "Dead Bladderwrack Block",
   "block.rounded.bladderwrack_block": "Bladderwrack Block",
   "block.rounded.moisture_detector": "Moisture Detector",
+
   "subtitles.rounded.block.trough_fill": "Trough filled",
   "subtitles.rounded.block.trough_consume": "Trough consumed",
   "subtitles.rounded.block.trough_rustle": "Feed rustles",
+
   "tag.worldgen.biome.rounded.has_lustershrooms": "Has lustershrooms",
   "tag.worldgen.biome.rounded.has_more_lustershrooms": "Has more lustershrooms",
   "tag.worldgen.biome.rounded.has_smooth_basalt_sea_rocks": "Has Smooth Basalt sea rocks",
@@ -37,6 +40,7 @@
   "tag.item.c.grain": "Grain",
   "tag.item.c.mushrooms": "Mushrooms",
   "tag.item.c.mushroom_caps": "Mushroom Caps",
+
   "block.rounded.compat.treated_hevea_brasiliensis_planks": "Treated Hevea Brasiliensis Planks",
   "block.rounded.compat.betterend.treated_dragon_tree_planks": "Treated Dragon Tree Planks",
   "block.rounded.compat.betterend.treated_end_lotus_planks": "Treated End Lotus Planks",

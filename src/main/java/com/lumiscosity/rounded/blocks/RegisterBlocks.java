@@ -1,11 +1,15 @@
 package com.lumiscosity.rounded.blocks;
 
+import com.mojang.datafixers.types.Type;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.JukeboxBlockEntity;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.datafixer.TypeReferences;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -16,7 +20,9 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 
+import static com.lumiscosity.rounded.Rounded.LOGGER;
 import static com.lumiscosity.rounded.Rounded.MOD_ID;
 
 public class RegisterBlocks {
@@ -168,10 +174,30 @@ public class RegisterBlocks {
                             .sounds(BlockSoundGroup.WET_GRASS)
                             .pistonBehavior(PistonBehavior.DESTROY)
     );
-    public static final Block BLADDERWRACK_BLOCK = new Block(AbstractBlock.Settings.create().mapColor(MapColor.GREEN).strength(0.5F, 2.5F).sounds(BlockSoundGroup.GRASS));
+    public static final Block DEAD_BLADDERWRACK_BLOCK = new Block(AbstractBlock.Settings.create()
+            .mapColor(MapColor.GRAY)
+            .solid()
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresTool()
+            .strength(1.5F, 6.0F)
+    );
+    public static final Block BLADDERWRACK_BLOCK = new CoralBlockBlock(DEAD_BLADDERWRACK_BLOCK, AbstractBlock.Settings.create()
+            .mapColor(MapColor.TERRACOTTA_BROWN)
+            .instrument(NoteBlockInstrument.BASEDRUM)
+            .requiresTool()
+            .strength(1.5F, 6.0F)
+            .sounds(BlockSoundGroup.CORAL));
     public static final BlockItem DEAD_BLADDERWRACK_ITEM = new BlockItem(DEAD_BLADDERWRACK, new Item.Settings());
     public static final BlockItem BLADDERWRACK_ITEM = new BlockItem(BLADDERWRACK, new Item.Settings());
     public static final BlockItem BLADDERWRACK_BLOCK_ITEM = new BlockItem(BLADDERWRACK_BLOCK, new Item.Settings());
+    public static final BlockItem DEAD_BLADDERWRACK_BLOCK_ITEM = new BlockItem(DEAD_BLADDERWRACK_BLOCK, new Item.Settings());
+
+    // Moisture Detector
+    public static final Block MOISTURE_DETECTOR = new MoistureDetectorBlock(
+            AbstractBlock.Settings.create().mapColor(MapColor.DIAMOND_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F)
+    );
+    public static final BlockItem MOISTURE_DETECTOR_ITEM = new BlockItem(MOISTURE_DETECTOR, new Item.Settings());
+    public static final BlockEntityType<MoistureDetectorBlock.MoistureDetectorBlockEntity> MOISTURE_DETECTOR_BE = register_be("moisture_detector",BlockEntityType.Builder.create(MoistureDetectorBlock.MoistureDetectorBlockEntity::new, MOISTURE_DETECTOR));
 
 
 
@@ -227,6 +253,7 @@ public class RegisterBlocks {
 
         register_block("dead_bladderwrack", DEAD_BLADDERWRACK, DEAD_BLADDERWRACK_ITEM);
         register_block("bladderwrack", BLADDERWRACK, BLADDERWRACK_ITEM);
+        register_block("dead_bladderwrack_block", DEAD_BLADDERWRACK_BLOCK, DEAD_BLADDERWRACK_BLOCK_ITEM);
         register_block("bladderwrack_block", BLADDERWRACK_BLOCK, BLADDERWRACK_BLOCK_ITEM);
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
             content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "dead_horn_coral_fan")), DEAD_BLADDERWRACK_ITEM);
@@ -235,9 +262,16 @@ public class RegisterBlocks {
             content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "horn_coral_fan")), BLADDERWRACK_ITEM);
         });
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
-            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "dried_kelp_block")), BLADDERWRACK_BLOCK_ITEM);
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "dead_horn_coral_block")), DEAD_BLADDERWRACK_BLOCK_ITEM);
         });
-        CompostingChanceRegistry.INSTANCE.add(BLADDERWRACK_ITEM, 0.3f);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "horn_coral_block")), BLADDERWRACK_BLOCK_ITEM);
+        });
+
+        register_block("moisture_detector", MOISTURE_DETECTOR, MOISTURE_DETECTOR_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "daylight_detector")), BLADDERWRACK_BLOCK_ITEM);
+        });
     }
 
     public static void register_treated_plank(String name, Block block, Item item, String source_mod, String plank_type) {
@@ -251,5 +285,10 @@ public class RegisterBlocks {
     private static void register_block(String name, Block block, Item item) {
         Registry.register(Registries.BLOCK, Identifier.of(MOD_ID, name), block);
         Registry.register(Registries.ITEM, Identifier.of(MOD_ID, name), item);
+    }
+
+    private static <T extends BlockEntity> BlockEntityType<T> register_be(String id, BlockEntityType.Builder<T> builder) {
+        Type<?> type = Util.getChoiceType(TypeReferences.BLOCK_ENTITY, id);
+        return Registry.register(Registries.BLOCK_ENTITY_TYPE, id, builder.build(type));
     }
 }
