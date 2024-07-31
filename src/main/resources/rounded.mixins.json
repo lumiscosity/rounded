@@ -3,6 +3,7 @@
   "package": "com.lumiscosity.rounded.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ExtraConduitPowerMixin",
     "TroughFallCancelMixin"
   ],
   "injectors": {

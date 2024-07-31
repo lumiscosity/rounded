@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "check_level=false": {
       "model": "rounded:block/moisture_detector"
+    },
+    "check_level=true": {
+      "model": "rounded:block/moisture_detector_level"
     }
   }
 }

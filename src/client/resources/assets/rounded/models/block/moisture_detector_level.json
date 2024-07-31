@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "top": "rounded:block/moisture_detector_top_level",
+    "side": "rounded:block/moisture_detector_side",
+    "bottom": "rounded:block/smooth_prismarine"
+  }
+}

@@ -273,8 +273,8 @@ public class RegisterBlocks {
         });
 
         register_block("moisture_detector", MOISTURE_DETECTOR, MOISTURE_DETECTOR_ITEM);
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
-            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "daylight_detector")), BLADDERWRACK_BLOCK_ITEM);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            content.addAfter(Registries.BLOCK.get(Identifier.of("minecraft", "daylight_detector")), MOISTURE_DETECTOR_ITEM);
         });
     }
 
