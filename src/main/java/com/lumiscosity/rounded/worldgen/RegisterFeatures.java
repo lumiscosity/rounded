@@ -59,7 +59,7 @@ public class RegisterFeatures {
         );
     }
 
-    private static <C extends FeatureConfig, F extends Feature<C>> F register_feature(String name, F feature) {
-        return Registry.register(Registries.FEATURE, Identifier.of(MOD_ID, name), feature);
+    private static <C extends FeatureConfig, F extends Feature<C>> void register_feature(String name, F feature) {
+        Registry.register(Registries.FEATURE, Identifier.of(MOD_ID, name), feature);
     }
 }
