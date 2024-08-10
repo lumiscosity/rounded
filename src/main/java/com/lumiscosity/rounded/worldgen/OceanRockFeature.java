@@ -3,6 +3,7 @@ package com.lumiscosity.rounded.worldgen;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -26,13 +27,13 @@ public class OceanRockFeature extends Feature<SimpleBlockFeatureConfig> {
         for (SimpleBlockFeatureConfig = context.getConfig(); origin.getY() > structureWorldAccess.getBottomY() + 3; origin = origin.down()) {
             if (!structureWorldAccess.isAir(origin.down())) {
                 BlockState blockState = structureWorldAccess.getBlockState(origin.down());
-                if (isSoil(blockState) || isStone(blockState)) {
+                if (isSoil(blockState) || isStone(blockState) || blockState.isIn(BlockTags.BASE_STONE_NETHER)) {
                     break;
                 }
             }
         }
 
-        if (origin.getY() <= structureWorldAccess.getBottomY() + 9) {
+        if (origin.getY() <= structureWorldAccess.getBottomY() + 3) {
             return false;
         } else {
             int[] heights = {

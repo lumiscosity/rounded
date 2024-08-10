@@ -1,15 +1,11 @@
 package com.lumiscosity.rounded.blocks;
 
-import com.mojang.datafixers.types.Type;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.LandPathNodeTypesRegistry;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.block.entity.JukeboxBlockEntity;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
-import net.minecraft.datafixer.TypeReferences;
 import net.minecraft.entity.ai.pathing.PathNodeType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -20,9 +16,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
 
-import static com.lumiscosity.rounded.Rounded.LOGGER;
 import static com.lumiscosity.rounded.Rounded.MOD_ID;
 
 public class RegisterBlocks {
@@ -194,7 +188,7 @@ public class RegisterBlocks {
 
     // Moisture Detector
     public static final Block MOISTURE_DETECTOR = new MoistureDetectorBlock(
-            AbstractBlock.Settings.create().mapColor(MapColor.DIAMOND_BLUE).instrument(NoteBlockInstrument.BASEDRUM).requiresTool().strength(1.5F, 6.0F)
+            AbstractBlock.Settings.create().mapColor(MapColor.DIAMOND_BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5F, 6.0F)
     );
     public static final BlockItem MOISTURE_DETECTOR_ITEM = new BlockItem(MOISTURE_DETECTOR, new Item.Settings());
     public static final BlockEntityType<MoistureDetectorBlock.MoistureDetectorBlockEntity> MOISTURE_DETECTOR_BE = Registry.register(

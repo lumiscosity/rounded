@@ -52,6 +52,11 @@ public class RegisterFeatures {
                 GenerationStep.Feature.LOCAL_MODIFICATIONS,
                 RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "smooth_basalt_ocean_rock"))
         );
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_lava_ocean_rocks"))),
+                GenerationStep.Feature.LOCAL_MODIFICATIONS,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "lava_ocean_rock"))
+        );
     }
 
     private static <C extends FeatureConfig, F extends Feature<C>> F register_feature(String name, F feature) {
