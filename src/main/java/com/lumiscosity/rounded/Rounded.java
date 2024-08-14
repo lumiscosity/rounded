@@ -4,6 +4,7 @@ import com.lumiscosity.rounded.blocks.RegisterBlocks;
 import com.lumiscosity.rounded.compat.*;
 import com.lumiscosity.rounded.misc.RegisterSounds;
 import com.lumiscosity.rounded.misc.RegisterTrades;
+import com.lumiscosity.rounded.worldgen.RegisterFeatures;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.loader.api.FabricLoader;
@@ -16,9 +17,11 @@ public class Rounded implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		RegisterFeatures.initFeatures();
 		RegisterBlocks.initBlocks();
 		RegisterSounds.initSounds();
 		RegisterTrades.initTrades();
+		RegisterMisc.initMisc();
 
 		if (FabricLoader.getInstance().isModLoaded("extravaganza")) {
 			ExtravaganzaCompat.register();
