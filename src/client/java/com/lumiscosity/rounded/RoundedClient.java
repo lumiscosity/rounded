@@ -9,5 +9,8 @@ public class RoundedClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		BlockRenderLayerMap.INSTANCE.putBlock(RegisterBlocks.LUSTERSHROOM_PLANT, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(RegisterBlocks.PRISMARINE_LANTERN, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(RegisterBlocks.BLADDERWRACK, RenderLayer.getCutout());
+		BlockRenderLayerMap.INSTANCE.putBlock(RegisterBlocks.DEAD_BLADDERWRACK, RenderLayer.getCutout());
 	}
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureConfig;
 import net.minecraft.world.gen.feature.HugeMushroomFeatureConfig;
+import net.minecraft.world.gen.feature.SimpleBlockFeatureConfig;
 
 import static com.lumiscosity.rounded.Rounded.MOD_ID;
 
@@ -37,10 +38,31 @@ public class RegisterFeatures {
                 RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "bladderwrack"))
         );
 
-        // Ocean floor rocks
+        // Ocean rocks
+        register_feature("ocean_rock", new OceanRockFeature(SimpleBlockFeatureConfig.CODEC));
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_andesite_ocean_rocks"))),
+                GenerationStep.Feature.LOCAL_MODIFICATIONS,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "andesite_ocean_rock"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_diorite_ocean_rocks"))),
+                GenerationStep.Feature.LOCAL_MODIFICATIONS,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "diorite_ocean_rock"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_smooth_basalt_ocean_rocks"))),
+                GenerationStep.Feature.LOCAL_MODIFICATIONS,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "smooth_basalt_ocean_rock"))
+        );
+        BiomeModifications.addFeature(
+                BiomeSelectors.tag(TagKey.of(RegistryKeys.BIOME, Identifier.of(MOD_ID, "has_lava_ocean_rocks"))),
+                GenerationStep.Feature.LOCAL_MODIFICATIONS,
+                RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(MOD_ID, "lava_ocean_rock"))
+        );
     }
 
-    private static <C extends FeatureConfig, F extends Feature<C>> F register_feature(String name, F feature) {
-        return Registry.register(Registries.FEATURE, Identifier.of(MOD_ID, name), feature);
+    private static <C extends FeatureConfig, F extends Feature<C>> void register_feature(String name, F feature) {
+        Registry.register(Registries.FEATURE, Identifier.of(MOD_ID, name), feature);
     }
 }

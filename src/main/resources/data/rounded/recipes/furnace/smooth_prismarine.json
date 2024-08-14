@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "ingredient": {
+    "item": "minecraft:prismarine"
+  },
+  "result": "rounded:smooth_prismarine",
+  "experience": 0.1
+}

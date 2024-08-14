@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": ["minecraft:prismarine_bricks"]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rounded:chiseled_prismarine_bricks",
+      "rounded:stonecutter/chiseled_prismarine_bricks"
+    ]
+  }
+}
