@@ -200,6 +200,30 @@
     {
       "required": false,
       "id": "rounded:compat/wilderwild/treated_palm_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pearfection/treated_callery_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/verdance/treated_mulberry_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/charm/treated_ebony_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/charm/treated_azalea_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/gardens_of_the_dead/treated_whistlecane_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/gardens_of_the_dead/treated_soulblight_planks"
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rounded:compat/gardens_of_the_dead/treated_soulblight_planks"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "rounded:blocks/compat/gardens_of_the_dead/treated_soulblight_planks",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "gardens_of_the_dead"
+      ]
+    }
+  ]
+}
