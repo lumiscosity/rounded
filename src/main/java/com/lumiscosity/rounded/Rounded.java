@@ -48,6 +48,18 @@ public class Rounded implements ModInitializer {
 		if (FabricLoader.getInstance().isModLoaded("wilderwild")) {
 			WilderwildCompat.register();
 		}
+		if (FabricLoader.getInstance().isModLoaded("gardens_of_the_dead")) {
+			GardensofthedeadCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("pearfection")) {
+			PearfectionCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("verdance")) {
+			VerdanceCompat.register();
+		}
+		if (FabricLoader.getInstance().isModLoaded("charm")) {
+			CharmCompat.register();
+		}
 
 		LOGGER.info("Rounded init complete!");
 	}
