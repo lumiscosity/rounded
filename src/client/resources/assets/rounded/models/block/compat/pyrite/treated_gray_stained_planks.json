@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rounded:block/compat/pyrite/treated_gray_stained_planks"
+  }
+}

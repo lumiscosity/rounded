@@ -227,6 +227,110 @@
     {
       "required": false,
       "id": "rounded:compat/gardens_of_the_dead/treated_soulblight_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_white_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_light_gray_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_gray_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_black_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_brown_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_red_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_orange_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_honey_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_yellow_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_poisonous_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_lime_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_green_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_glow_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_cyan_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_nostalgia_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_star_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_light_blue_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_blue_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_purple_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_dragon_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_magenta_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_rose_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_pink_stained_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_red_mushroom_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_brown_mushroom_planks"
+    },
+    {
+      "required": false,
+      "id": "rounded:compat/pyrite/treated_azalea_planks"
     }
   ]
 }

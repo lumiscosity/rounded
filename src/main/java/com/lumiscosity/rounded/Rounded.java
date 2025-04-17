@@ -60,6 +60,9 @@ public class Rounded implements ModInitializer {
 		if (FabricLoader.getInstance().isModLoaded("charm")) {
 			CharmCompat.register();
 		}
+		if (FabricLoader.getInstance().isModLoaded("pyrite")) {
+			PyriteCompat.register();
+		}
 
 		LOGGER.info("Rounded init complete!");
 	}
